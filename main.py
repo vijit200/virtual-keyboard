@@ -40,7 +40,7 @@ while True:
 
     success, img = cap.read()
     # Find the hand and its landmarks
-    img = cv2.resize(img,(1920,1080))
+    img = cv2.resize(img,(1300,700))
     hands, img = detector.findHands(img)
     
     img = drawAll(img,buttonlist)
@@ -64,8 +64,14 @@ while True:
                         finaltext = finaltext[:-1]
                     if button.text == "SP":
                         finaltext += " "
+
+                    #if button.text == "ab":
+                        #ab = button.text
+                        #ab = ab.lower()
+                        #inaltext += ab
                     
-                    if button.text != "DL" and button.text !="SP":
+                    
+                    if button.text != "DL" and button.text !="SP" :
                         finaltext += button.text
                     
                     filename = 'mixkit-arcade-game-jump-coin-216.wav'
